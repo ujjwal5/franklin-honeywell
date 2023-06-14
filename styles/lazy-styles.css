@@ -1,1 +1,93 @@
 /* below the fold CSS goes here */
+
+header nav a:any-link {
+    font-size: 16px;
+}
+
+.quick-links {
+    background-color: black;
+}
+
+.support > div > div {
+    border-radius: 0.5rem;
+    background-color: white;
+}
+
+.support picture {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    width: 100px;
+    margin-top: 3rem;
+}
+
+.support h3 {
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: -1rem;
+}
+
+.support a {
+    color: black;
+    font-size: 18px;
+}
+
+.explore h2 {
+    font-size: 29px;
+}
+
+.explore p {
+    font-size: 16px;
+}
+
+.explore-section {
+    background-color: white;
+}
+
+.news-section {
+    --tw-bg-opacity: 1;
+    background-color: rgb(245 245 244/var(--tw-bg-opacity));
+}
+
+.news-section h2 {
+    text-align: center;
+    margin-top: -63px;
+    font-size: 26px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+main .banner-manager-section {
+    --tw-bg-opacity: 1;
+    background-color: rgb(214 211 209/var(--tw-bg-opacity));
+    padding-top: 15px;
+    padding-bottom: 35px;
+}
+
+main .banner-manager-section a {
+    --tw-bg-opacity: 1;
+    background-color: rgb(214 211 209/var(--tw-bg-opacity));
+    padding-top: 15px;
+    padding-bottom: 35px;
+}
+
+main .breadcrumb-section {
+    --tw-bg-opacity: 1;
+    background-color: rgb(41 37 36/var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255/var(--tw-text-opacity));
+    padding-top: 70px;
+    padding-bottom: 0px;
+}
+
+.breadcrumb-section p {
+    margin-top: -50px;
+    opacity: .6;
+    font-size: 16px;
+}
+
+.footer-section {
+    --tw-bg-opacity: 1;
+    background-color: rgb(68 64 60/var(--tw-bg-opacity));
+}
+

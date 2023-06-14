@@ -148,8 +148,8 @@ header .nav-brand {
 }
 
 header nav .nav-brand img {
-  width: 128px;
-  height: auto;
+  height: 3rem;
+  width: 5rem;
 }
 
 /* sections */
