@@ -1,0 +1,70 @@
+.cardcarousel-container {
+  background-color: black;
+}
+
+.cardcarousel-wrapper {
+  margin: 1%;
+  width: fit-content;
+  max-width: unset !important;
+}
+
+.cardcarousel .outerdiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  gap: 0.5%;
+}
+
+.cardcarousel .innerdiv {
+  width: 25%;
+  height: 200px;
+  flex-shrink: 0;
+  border-radius: 0.5rem;
+}
+
+.slide-transition {
+  transition: transform 0.3s step-end;
+}
+
+.cardcarousel .cards-card-body {
+  margin: 0px;
+}
+
+.cardcarousel .cards-card-image {
+  line-height: 0;
+}
+
+.cardcarousel .cards-card-body > *:first-child {
+  margin-top: 0;
+  height: 15px;
+}
+
+.cardcarousel img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  opacity: 30%;
+}
+
+.cardcarousel h2,
+.cardcarousel h3 {
+  color: #ffffff;
+  padding-left: 1%;
+  font-size: 1.5rem;
+  position: fixed;
+  text-shadow: 0 0 4px #000, 0 0 8px #000;
+}
+
+.cardcarousel a {
+  color:white;
+}
+
+.cardcarousel a:hover {
+  color:red;
+  text-decoration: none;
+}
+.scrollRight {
+  float:right;
+}
+
