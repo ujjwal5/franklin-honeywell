@@ -226,7 +226,7 @@ main .section {
 
 @media (min-width: 600px) {
   main .section {
-    padding: 64px 32px;
+    padding: 1% 32px;
   }
 }
 
@@ -240,4 +240,11 @@ main .section {
 /* section metadata */
 main .section.highlight {
   background-color: var(--highlight-background-color);
+}
+
+.trending-section,
+.applications-section,
+.product-categories {
+     --tw-bg-opacity: 1;
+      background-color: rgb(28 25 23/var(--tw-bg-opacity)) !important;
 }

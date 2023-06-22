@@ -5,7 +5,8 @@ header nav a:any-link {
 }
 
 .quick-links {
-    background-color: black;
+    --tw-bg-opacity: 1;
+    background-color: rgb(28 25 23/var(--tw-bg-opacity));
 }
 
 .support > div > div {
@@ -47,14 +48,16 @@ header nav a:any-link {
 .news-section {
     --tw-bg-opacity: 1;
     background-color: rgb(245 245 244/var(--tw-bg-opacity));
+    text-align: center;
 }
 
 .news-section h2 {
     text-align: center;
-    margin-top: -63px;
-    font-size: 26px;
+    font-size: 20px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    margin-top: -10px;
+    margin-bottom: 50px;
 }
 
 main .banner-manager-section {
@@ -90,4 +93,3 @@ main .breadcrumb-section {
     --tw-bg-opacity: 1;
     background-color: rgb(68 64 60/var(--tw-bg-opacity));
 }
-
