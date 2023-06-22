@@ -1,28 +1,32 @@
-/*.cardcarousel-container {
-  --tw-bg-opacity: 1;
-  background-color: rgb(28 25 23/var(--tw-bg-opacity));
-}*/
+.cardcarousel-container {
+  background-color: black;
+}
+
+.cardcarousel {
+  display: flex;
+}
 
 .cardcarousel-wrapper {
   margin: 1%;
+  width: fit-content;
   max-width: unset !important;
 }
 
 .cardcarousel .outerdiv {
   display: flex;
   overflow: hidden;
-  flex-wrap: nowrap;
   gap: 0.5%;
 }
 
 .cardcarousel .innerdiv {
-  width: 33%;
+  width: 25%;
   height: 200px;
   flex-shrink: 0;
   border-radius: 0.5rem;
 }
 
-.slide-transition {
+.slide-transition-right,
+.slide-transition-left {
   transition: transform 0.3s step-end;
 }
 
@@ -47,13 +51,19 @@
 }
 
 .cardcarousel h2,
-.cardcarousel h3 {
-  text-align: center;
+.cardcarousel h3,
+.carouselheading {
   color: #ffffff;
   padding-left: 1%;
   font-size: 1.5rem;
   position: relative;
   text-shadow: 0 0 4px #000, 0 0 8px #000;
+}
+
+.carouselheading {
+  margin-left: 3%;
+  margin-bottom: 2%;
+  font-size: 1.3rem;
 }
 
 .cardcarousel a {
@@ -64,8 +74,22 @@
   color:red;
   text-decoration: none;
 }
-.scrollRight {
-  float:right;
+
+.scrollRight,
+.scrollLeft,
+.scrollRight:focus,
+.scrollLeft:focus {
+  border: none;
+  background-color: transparent;
+  overflow: unset;
+  margin: 0px;
+  border-radius: 0px;
 }
 
+.scrollRight:hover,
+.scrollLeft:hover {
+   border: none;
+  background-color: red;
+  overflow: unset;
+}
 

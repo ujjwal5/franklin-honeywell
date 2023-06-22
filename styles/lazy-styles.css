@@ -91,12 +91,3 @@ main .breadcrumb-section {
     --tw-bg-opacity: 1;
     background-color: rgb(68 64 60/var(--tw-bg-opacity));
 }
-
-.trending-section {
-    --tw-bg-opacity: 1;
-    background-color: rgb(28 25 23/var(--tw-bg-opacity));
-}
-
-.trending {
-    display: flex;
-}
