@@ -1,23 +1,22 @@
-.cardcarousel-container {
-  background-color: black;
-}
+/*.cardcarousel-container {
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 25 23/var(--tw-bg-opacity));
+}*/
 
 .cardcarousel-wrapper {
   margin: 1%;
-  width: fit-content;
   max-width: unset !important;
 }
 
 .cardcarousel .outerdiv {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
   overflow: hidden;
+  flex-wrap: nowrap;
   gap: 0.5%;
 }
 
 .cardcarousel .innerdiv {
-  width: 25%;
+  width: 33%;
   height: 200px;
   flex-shrink: 0;
   border-radius: 0.5rem;
@@ -49,10 +48,11 @@
 
 .cardcarousel h2,
 .cardcarousel h3 {
+  text-align: center;
   color: #ffffff;
   padding-left: 1%;
   font-size: 1.5rem;
-  position: fixed;
+  position: relative;
   text-shadow: 0 0 4px #000, 0 0 8px #000;
 }
 
@@ -67,4 +67,5 @@
 .scrollRight {
   float:right;
 }
+
 

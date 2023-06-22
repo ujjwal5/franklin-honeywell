@@ -1,87 +1,99 @@
-import { createOptimizedPicture } from '../../scripts/lib-franklin.js';
-
 export default function decorate(block) {
-  /* change to ul, li */
-  const ul = document.createElement('div');
-  ul.classList.add("outerdiv");
+
+
+
+  const outerDiv = document.createElement('div');
+  outerDiv.classList.add("outerdiv");
   var num_items = block.children.length;
   var current = 1;
 
+
   [...block.children].forEach((row) => {
-    const li = document.createElement('div');
-    li.classList.add("innerdiv");
-    li.innerHTML = row.innerHTML;
-    li.style.order = current;
-    li.dataset.position = current;
+    const innerDiv = document.createElement('div');
+    innerDiv.classList.add("innerdiv");
+    innerDiv.innerHTML = row.innerHTML;
+    innerDiv.style.order = current;
+    innerDiv.dataset.position = current;
     current++;
-    [...li.children].forEach((div) => {
+    [...innerDiv.children].forEach((div) => {
       if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
       else div.className = 'cards-card-body';
     });
-
-    //current=1;
-    ul.append(li);
+    outerDiv.append(innerDiv);
   });
-  current=1;
-  ul.querySelectorAll('img').forEach((img) => /*{ 
-    var pic = img.closest('picture');
-    var div = img.closest('.innerdiv');
-    var src = img.src;
-    pic.parentNode.removeChild(pic);
-    div.style.backgroundImage = "url('"+ img.src +"')";
-    
-    //.replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]));
-  }*/img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
+
+  current=0;
+  var isRightClick;
   block.textContent = '';
-  block.append(ul);
-
-  var next = function (isRight) {
-    document.querySelector(".outerdiv").classList.add('slide-transition');
-    if (isRight) {
-      document.querySelector(".outerdiv").style.transform = 'translate3d(-50%, 0px,0px)';
-    } else {
-      document.querySelector(".outerdiv").style.transform = 'translate3d(50%, 0px,0px)';
-    }
-  };
-
-  var changeOrder = function () {
-    if(current === num_items) {
-        current = 1;
-    } else {
-        current++;
-    }
-  
-  
-    let order = 1;
-    for( let i = current; i <= num_items; i++) {
-        document.querySelector(".innerdiv[data-position='" + i +"']").style.order = order;
-        order++;
-    }
-
-    for( let i = 1 ; i < current; i++) {
-        document.querySelector(".innerdiv[data-position='" + i +"']").style.order = order;
-        order++;
-    }
-    document.querySelector(".outerdiv").classList.remove('slide-transition');
-    document.querySelector(".outerdiv").style.transform = 'translate3d(0px, 0px,0px)'
-};
-
-  const button = document.createElement("button");
-  button.classList.add("scrollRight");
-  button.innerText = "Right";
-  button.addEventListener("click", next, true);
-  block.append(button);
 
   const buttonl = document.createElement("button");
   buttonl.classList.add("scrollLeft");
   buttonl.innerText = "Left";
-  buttonl.addEventListener("click", next, true);
+  buttonl.addEventListener("click", function() {
+    next(false);
+  });
   block.append(buttonl);
+
+  block.append(outerDiv);
+
+  const button = document.createElement("button");
+  button.classList.add("scrollRight");
+  button.innerText = "Right";
+  button.addEventListener("click", function() {
+    next(true);
+  });
+  block.append(button);
+
 
   document.querySelector(".outerdiv").addEventListener("transitionend", () => {
     changeOrder();
-}); 
+});
 
-  
+  var next = function (isRight) {
+    document.querySelector(".outerdiv").classList.add('slide-transition');
+    if (isRight) {
+      isRightClick = true;
+      document.querySelector(".outerdiv").style.transform = 'translate3d(-25%, 0px,0px)';
+    } else {
+      isRightClick = false;
+      document.querySelector(".outerdiv").style.transform = 'translate3d(25%, 0px,0px)';
+    }
+  };
+
+  var changeOrder = function () {
+    if(isRightClick === undefined) {
+      return;
+    }
+    if(isRightClick) {
+      let currItem = ((current%num_items) + num_items)%num_items + 1;
+      document.querySelector(".innerdiv[data-position='" + currItem +"']").style.order = current+num_items+1;
+      current++;
+    } else {
+      let currItem = (((current-1)%num_items)+ num_items)%num_items +1;
+      document.querySelector(".innerdiv[data-position='" + currItem +"']").style.order = current;
+      current--;
+    }
+    /*
+    if(current === num_items) {
+      current = 1;
+    } else {
+      current++;
+    }
+
+
+    let order = 1;
+    for( let i = current; i <= num_items; i++) {
+      document.querySelector(".innerdiv[data-position='" + i +"']").style.order = order;
+      order++;
+    }
+
+    for( let i = 1 ; i < current; i++) {
+      document.querySelector(".innerdiv[data-position='" + i +"']").style.order = order;
+      order++;
+    }*/
+    document.querySelector(".outerdiv").classList.remove('slide-transition');
+    document.querySelector(".outerdiv").style.transform = 'translate3d(0px, 0px,0px)'
+  };
+
 
 }
