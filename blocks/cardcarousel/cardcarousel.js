@@ -71,11 +71,13 @@ export default function decorate(block) {
 
     for( let i = current; i <= num_items; i++) {
         outerdiv.querySelector(".innerdiv[data-position='" + i +"']").style.order = order;
+        outerdiv.querySelector(".innerdiv[data-position='" + i +"']").setAttribute("data-order", order);
         order++;
     }
 
     for( let i = 1 ; i < current; i++) {
         outerdiv.querySelector(".innerdiv[data-position='" + i +"']").style.order = order;
+        outerdiv.querySelector(".innerdiv[data-position='" + i +"']").setAttribute("data-order", order);
         order++;
     }
 
@@ -91,6 +93,7 @@ export default function decorate(block) {
   block.append(button);
 
   block.querySelector(".outerdiv").addEventListener("transitionend", (event) => {
+    console.log("called in carousel");
     changeOrder(event);
 }); 
 
@@ -99,7 +102,7 @@ var title =  block.parentElement.parentElement.dataset.title;
 
 
 var heading = document.createElement("h3");
-heading.classList.add("carouselheading")
+heading.classList.add("carouselheading");
 heading.innerText = title;
 blockParent.textContent = '';
 blockParent.append(heading);

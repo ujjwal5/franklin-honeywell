@@ -255,3 +255,7 @@ main .section.highlight {
   opacity: 100%;
   aspect-ratio: unset;
 }
+
+.recent-updates .innerdiv[data-order='1'] {
+  border: 2px solid red;
+}
