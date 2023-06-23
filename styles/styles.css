@@ -246,7 +246,8 @@ main .section.highlight {
 .applications-section,
 .product-categories,
 .recent-updates,
-.upcoming-events {
+.upcoming-events,
+.science-lab {
      --tw-bg-opacity: 1;
       background-color: rgb(28 25 23/var(--tw-bg-opacity)) !important;
 }

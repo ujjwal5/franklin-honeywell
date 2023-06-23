@@ -93,3 +93,43 @@ main .breadcrumb-section {
     --tw-bg-opacity: 1;
     background-color: rgb(68 64 60/var(--tw-bg-opacity));
 }
+
+.leica-science-lab .innerdiv {
+    height: auto;
+    background-color: white;
+}
+
+.leica-science-lab .innerdiv[data-position='1'] .cards-card-body {
+    text-align: center;
+    margin-top: 130px;
+}
+
+.leica-science-lab p:last-child {
+    color: black;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: initial;
+}
+
+.leica-science-lab .cards-card-body > *:first-child {
+    height: auto;
+}
+
+.leica-science-lab a {
+    color: black;
+}
+
+.leica-science-lab img {
+    aspect-ratio: auto;
+    opacity: 1;
+}
+
+.leica-science-lab h3 {
+    text-shadow: none;
+    padding-left: 1%;
+    font-size: 1.5rem;
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: black;
+}

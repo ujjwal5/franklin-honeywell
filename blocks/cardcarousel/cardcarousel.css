@@ -8,7 +8,7 @@
 
 .cardcarousel-wrapper {
   margin: 1%;
-  width: fit-content;
+  /*width: fit-content;*/
   max-width: unset !important;
 }
 
