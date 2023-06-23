@@ -260,3 +260,15 @@ main .section.highlight {
 .recent-updates .innerdiv[data-order='1'] {
   border: 2px solid red;
 }
+
+.hero h2 {
+  text-align: left;
+  font-size: 2.5rem;
+  color: white;
+}
+
+.hero p:last-child {
+  color: white;
+  width: 40%;
+  font-size: initial;
+}
