@@ -245,7 +245,13 @@ main .section.highlight {
 .trending-section,
 .applications-section,
 .product-categories,
-.recent-updates {
+.recent-updates,
+.upcoming-events {
      --tw-bg-opacity: 1;
       background-color: rgb(28 25 23/var(--tw-bg-opacity)) !important;
+}
+
+.upcoming-events .cardcarousel img {
+  opacity: 100%;
+  aspect-ratio: unset;
 }
