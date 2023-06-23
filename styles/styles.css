@@ -244,7 +244,8 @@ main .section.highlight {
 
 .trending-section,
 .applications-section,
-.product-categories {
+.product-categories,
+.recent-updates {
      --tw-bg-opacity: 1;
       background-color: rgb(28 25 23/var(--tw-bg-opacity)) !important;
 }
